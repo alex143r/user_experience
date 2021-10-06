@@ -1,0 +1,238 @@
+/**************
+GENEREAL
+**************/
+:root {
+  --primaryColor: #ea5048;
+  --secondaryColor: #26354c;
+  --tertiaryColor: lightgoldenrodyellow;
+  --white: white;
+  --black: black;
+  --linkActive: #e5cd8f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  font-size: 1rem;
+  font-style: normal;
+}
+
+/**************
+NAV
+**************/
+header h1 {
+  padding: 1rem 0;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--primaryColor);
+}
+
+nav {
+  background-color: var(--secondaryColor);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+nav a {
+  flex-grow: 1;
+  flex-basis: 200px;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: bold;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--white);
+  text-align: center;
+  margin: 0 1rem;
+  font-size: 1.1rem;
+}
+
+nav a:last-of-type {
+  border-bottom: none;
+}
+
+nav a.active {
+  font-size: 1.4rem;
+  color: var(--linkActive);
+}
+
+/**************
+FOOTER
+**************/
+
+footer {
+  background-color: var(--secondaryColor);
+  color: var(--white);
+  padding: 0.4rem 0;
+  text-align: center;
+}
+
+/**************
+MAIN
+**************/
+main {
+  margin: 0.5rem 1rem;
+}
+
+main p {
+  text-align: justify;
+}
+
+/**************
+HOME
+**************/
+main#home p#txtWelcome {
+  padding: 0.5rem 0;
+}
+/* 
+main#home {
+  display: grid;
+  grid-template-areas:
+    "img"
+    "info"
+    "list"
+    "quote";
+}
+
+main p#txtWelcome {
+  grid-area: info;
+}
+
+main img#restaurant {
+  grid-area: img;
+} */
+
+main#home section#welcome {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+
+main#home section#welcome #txtContainer,
+main#home section#welcome img#restaurant {
+  flex-grow: 1;
+  flex-basis: 200px;
+}
+
+main#home li {
+  list-style: none;
+  color: var(--primaryColor);
+  font-weight: bold;
+  margin: 0.5rem;
+}
+
+main#home #txtQuote {
+  background-color: lightgrey;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+/**************
+MENU
+**************/
+main article.dish {
+  background-color: var(--tertiaryColor);
+  border: var(--black) solid thin;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+
+main article.dish h2 {
+  margin: 0.8rem 0;
+  font-size: 1.3rem;
+}
+
+main#menu p.dishDesc {
+  margin: 0.5rem 0;
+}
+main article.dish .dishPrice {
+  background-color: var(--primaryColor);
+  color: var(--white);
+  border: 0.3rem solid var(--secondaryColor);
+  padding: 0.2rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/**************
+CONTACT
+**************/
+main#contact section#info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+
+main#contact section#info address#addressTxt p {
+  margin: 1rem 0;
+}
+main#contact section#info address#addressTxt a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+}
+
+main#contact section#info #map {
+  border: var(--black) solid thin;
+  padding: 0.5rem;
+}
+
+/**************
+CONTACT FORM
+**************/
+main#contact form fieldset {
+  padding: 0.5rem;
+}
+
+main#contact form input,
+main#contact form textarea {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+main#contact form input#dateTime {
+  width: auto;
+}
+
+main#contact form input#noPersons {
+  width: 3rem;
+}
+
+@media only screen and (min-width: 500px) {
+  nav {
+    display: block;
+  }
+
+  nav a {
+    border-bottom: none;
+    display: inline-block;
+    margin: 0 0.5rem;
+  }
+
+  header h1 {
+    text-align: left;
+    padding-left: 2rem;
+  }
+
+  main#home section#welcome {
+    flex-direction: row;
+  }
+}
