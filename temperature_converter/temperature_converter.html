@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="temperature_converter.css">
+    <script src="temperature_converter.js" defer></script>
+    <title>Temperature converter</title>
+</head>
+
+<body class="temperature">
+    <section>
+        <h1>Temperature Converter</h1>
+
+        <main>
+            <form action="#">
+                <label for="convert-input">Convert°</label>
+                <input id="convert-input" name="convert" type="number" placeholder="Insert Degrees" required
+                    step="0.01" />
+                <div class="convert-wrapper">
+                    <div class="convert-item">
+                        <p>From</p>
+                        <div class="select-custom">
+                            <select size="3" name="" id="currentUnit">
+                                <option value="celsius" selected>Celsius</option>
+                                <option value="fahrenheit">Fahrenheit</option>
+                                <option value="kelvin">Kelvin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="convert-item">
+                        <p>To</p>
+                        <div class="select-custom">
+                            <select size="3" name="" id="newUnit">
+                                <option value="celsius">Celsius</option>
+                                <option value="fahrenheit" selected>Fahrenheit</option>
+                                <option value="kelvin">Kelvin</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button>Calculate</button>
+                <div class="output">
+                    <p class="original-value"></p>
+                    <p class="converted-value"></p>
+                </div>
+            </form>
+        </main>
+        <footer>&copy; 2021 Alexander Obel Tyllesen</footer>
+
+    </section>
+</body>
+
+</html>

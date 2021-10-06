@@ -16,9 +16,8 @@ body {
 }
 
 h1 {
-    color: white;
     background-color: var(--primary);
-
+    color: white;
     padding: 10px 0 10px 30px;
 }
 
@@ -34,7 +33,6 @@ footer {
     align-items: center;
     background: var(--primary);
     width: 100%;
-    bottom: 0;
 }
 
 select {
@@ -58,26 +56,27 @@ input {
     -webkit-appearance: none;
     border: 1px solid black;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 
-/** Calculator **/
-.calculator form {
+/** Temperature **/
+.temperature form {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.calculator form>* {
+.temperature form>* {
     padding: 10px;
     margin: 0 20px;
 }
 
-.calculator label {
+.temperature label {
     font-size: 20px;
     margin-left: 10px;
 }
 
-.calculator section {
+.temperature section {
     max-width: 90vw;
     margin: 30px auto;
     display: flex;
@@ -85,55 +84,68 @@ input {
     flex-direction: column;
 }
 
-.calculator main {
+.temperature main {
     border: 2px solid black;
 }
 
-.calculator button {
+.temperature button {
     color: var(--primary);
     font-size: 16px;
     width: 100px;
     margin: 20px;
 }
 
-.calculator .output {
-    justify-content: center;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    background-color: var(--secondary);
-}
-
-.calculator .output .output-amount {
+.temperature .convert-wrapper {
     display: flex;
-}
-
-.calculator .output .output-amount p {
+    justify-content: flex-start;
     margin: 0;
 }
 
-
-.calculator .output p {
-    font-size: 1.2rem;
+.convert-item {
+    flex: 0 0 20%;
 }
 
-
-
-.calculator .output label {
-    margin-left: 0;
+.result {
     padding: 10px;
+    margin: 0 20px;
+    color: var(--primary);
 }
+
+.temperature .output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    min-height: 50px;
+    background-color: var(--secondary)
+}
+
+.result {
+    background: white;
+}
+
+.result-label {
+    padding: 15px;
+}
+
 
 @media only screen and (min-width: 768px) {
-    /** Calculator ~ Mediaqueries **/
 
-    .calculator section {
-        max-width: 40%;
+    /** Temperature ~ Mediaqueries **/
+    .temperature section {
+        max-width: 50%;
         margin: 20px auto;
         margin-bottom: 100px;
     }
 
-    .calculator .output {
-        flex-direction: row;
+    .temperature select {
+        font-size: 1.5rem;
+    }
+
+    .temperature .result {
+        font-size: 1rem;
+        max-width: 80%;
     }
 
 }
