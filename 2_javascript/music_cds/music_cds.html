@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="music_cds.js" defer></script>
+    <link rel="stylesheet" href="music_cds.css" />
+    <title>Music CDs</title>
+  </head>
+
+  <body class="music">
+    <section>
+      <h1>Music CDs</h1>
+      <main>
+        <form action="#">
+          <div class="input-set">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" required />
+          </div>
+          <div class="input-set">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" required />
+          </div>
+          <div class="input-set input-year">
+            <label for="year">Year</label>
+            <input type="number" name="year" id="year" required />
+          </div>
+
+          <button class="add-button" type="submit">Add</button>
+        </form>
+        <section class="cd-list">
+          <div class="cd-item">
+            <h3>Author</h3>
+            <h3>Title</h3>
+            <h3>Year</h3>
+            <h3>x</h3>
+          </div>
+        </section>
+      </main>
+      <footer>&copy; 2021 Alexander Obel Tyllesen</footer>
+    </section>
+  </body>
+</html>

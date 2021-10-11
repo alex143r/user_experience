@@ -1,0 +1,139 @@
+/** General **/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+}
+
+:root {
+    --primary: #264185;
+    --secondary: #a9abae;
+}
+
+h1 {
+    color: white;
+    background-color: var(--primary);
+
+    padding: 10px 0 10px 30px;
+}
+
+p {
+    margin: 0 15px;
+}
+
+footer {
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary);
+    width: 100%;
+    bottom: 0;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 15px;
+    margin: 10px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+selected:active {
+    color: blue;
+}
+
+input {
+    max-height: 50px;
+    max-width: 300px;
+    height: 40px;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid black;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/** Calculator **/
+.calculator form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.calculator form>* {
+    padding: 10px;
+    margin: 0 20px;
+}
+
+.calculator label {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.calculator section {
+    max-width: 90vw;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.calculator main {
+    border: 2px solid black;
+}
+
+.calculator button {
+    color: var(--primary);
+    font-size: 16px;
+    width: 100px;
+    margin: 20px;
+}
+
+.calculator .output {
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: var(--secondary);
+}
+
+.calculator .output .output-amount {
+    display: flex;
+}
+
+.calculator .output .output-amount p {
+    margin: 0;
+}
+
+
+.calculator .output p {
+    font-size: 1.2rem;
+}
+
+
+
+.calculator .output label {
+    margin-left: 0;
+    padding: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    /** Calculator ~ Mediaqueries **/
+
+    .calculator section {
+        max-width: 40%;
+        margin: 20px auto;
+        margin-bottom: 100px;
+    }
+
+    .calculator .output {
+        flex-direction: row;
+    }
+
+}

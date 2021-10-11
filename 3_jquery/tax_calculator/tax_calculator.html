@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tax_calculator.css" />
+    <script type="text/javascript" src="../jquery-3.5.1.js"></script>
+    <script src="tax_calculator.js" defer></script>
+
+    <title>Tax Calculator</title>
+  </head>
+
+  <body class="calculator">
+    <section>
+      <h1>Tax calculator</h1>
+      <main>
+        <form action="#">
+          <label for="amount">Monetary amount</label>
+          <input
+            type="number"
+            name="amount"
+            id="amount"
+            step=".01"
+            placeholder="0.00"
+            min="0"
+            required
+          />
+          <label for="tax">Tax percentage</label>
+          <input
+            type="number"
+            name="tax"
+            id="tax"
+            placeholder="0.00"
+            step="0.01"
+            min="0"
+            required
+          />
+          <button type="submit">Calculate</button>
+          <div class="output">
+            <div class="output-amount">
+              <p>Tax amount:</p>
+              <p class="tax-amount" id="tax-amount"></p>
+            </div>
+            <div class="output-amount">
+              <p>Final amount:</p>
+              <p class="final-amount" id="final-amount"></p>
+            </div>
+          </div>
+        </form>
+      </main>
+      <footer>&copy; 2021 Alexander Obel Tyllesen</footer>
+    </section>
+  </body>
+</html>

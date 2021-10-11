@@ -44,7 +44,6 @@ function calculateTemperature() {
     }
     if (newUnit == "kelvin") {
       resultText = `°K`;
-
       result = temperature + (459.67 * 5) / 9;
     }
   }
@@ -63,6 +62,5 @@ function calculateTemperature() {
       resultText = `°K`;
     }
   }
-  console.log(result);
   convertedValue.innerHTML = `${result.toFixed(2)}${resultText}`;
 }
