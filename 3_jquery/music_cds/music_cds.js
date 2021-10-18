@@ -1,7 +1,7 @@
 // let cdCount = 0;
 
-document.querySelector("button").addEventListener("click", function (e) {
-  const form = document.querySelector("form");
+$("button").click(function (e) {
+  const form = $("form")[0];
   e.preventDefault();
   if (form.checkValidity()) {
     addCd();
@@ -11,21 +11,14 @@ document.querySelector("button").addEventListener("click", function (e) {
 
 function addCd() {
   let divItem = `<div class="cd-item">
-   <p>${document.querySelector("#author").value}</p>
-   <p>${document.querySelector("#title").value}</p>
-   <p>${document.querySelector("#year").value}</p>
+   <p>${$("#author").val()}</p>
+   <p>${$("#title").val()}</p>
+   <p>${$("#year").val()}</p>
    <button onclick="deleteItem()" class="delete-button">🗑️</button>
     </div>`;
-  console.log(divItem);
-  document.querySelector(".cd-list").insertAdjacentHTML("beforeend", divItem);
-  // document
-  //   .querySelector(`.delete-button[data-cd-index="${cdCount}"]`)
-  //   .addEventListener("click", deleteItem);
-  // cdCount++;
-  // <button data-cd-index="${cdCount}" class="delete-button">🗑️</button>
-  //   </div>`
+  $(".cd-list").append(divItem);
 }
 
 function deleteItem() {
-  event.target.parentElement.remove();
+  target.parentElement.remove();
 }

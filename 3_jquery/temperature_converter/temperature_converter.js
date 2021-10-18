@@ -1,5 +1,5 @@
-document.querySelector("button").addEventListener("click", function (e) {
-  const form = document.querySelector("form");
+$("button").click(function (e) {
+  const form = $("form")[0];
   e.preventDefault();
   form.reportValidity();
   if (form.checkValidity()) {
@@ -8,19 +8,22 @@ document.querySelector("button").addEventListener("click", function (e) {
 });
 
 function calculateTemperature() {
-  const temperature = parseInt(document.querySelector("#convert-input").value);
-  const currentUnit = document.querySelector("#currentUnit").value;
-  const newUnit = document.querySelector("#newUnit").value;
-  const originalValue = document.querySelector(".original-value");
-  const convertedValue = document.querySelector(".converted-value");
+  const temperature = parseFloat($("#convert-input").val());
+  const currentUnit = $("#currentUnit").val();
+  const newUnit = $("#newUnit").val();
+  const originalValue = $(".original-value");
+  const convertedValue = $(".converted-value");
+  console.log(currentUnit);
   let result;
   let resultText;
 
   //if to decide calculation
   if (currentUnit == "celsius") {
-    originalValue.innerHTML = `${temperature.toFixed(2)}°C =`;
+    originalValue.html(`${temperature.toFixed(2)}°C =`);
     if (newUnit == "celsius") {
       result = temperature;
+      console.log(result);
+
       resultText = `°C`;
     }
     if (newUnit == "fahrenheit") {
@@ -33,7 +36,7 @@ function calculateTemperature() {
     }
   }
   if (currentUnit == "fahrenheit") {
-    originalValue.innerHTML = `${temperature.toFixed(2)}°F =`;
+    originalValue.html(`${temperature.toFixed(2)}°F =`);
     if (newUnit == "celsius") {
       result = ((temperature - 32) * 5) / 9;
       resultText = `°C`;
@@ -48,7 +51,7 @@ function calculateTemperature() {
     }
   }
   if (currentUnit == "kelvin") {
-    originalValue.innerHTML = `${temperature.toFixed(2)}°K =`;
+    originalValue.html(`${temperature.toFixed(2)}°K =`);
     if (newUnit == "celsius") {
       result = 273.15 - temperature;
       resultText = `°C`;
@@ -62,5 +65,5 @@ function calculateTemperature() {
       resultText = `°K`;
     }
   }
-  convertedValue.innerHTML = `${result.toFixed(2)}${resultText}`;
+  convertedValue.html(`${result.toFixed(2)}${resultText}`);
 }

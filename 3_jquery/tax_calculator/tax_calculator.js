@@ -9,18 +9,18 @@ $("button").click(function (e) {
 });
 
 function calculateTax() {
-  let amount = document.querySelector("#amount");
-  let tax = document.querySelector("#tax");
+  let amount = $("#amount");
+  let tax = $("#tax");
 
   if (tax.value > 100) {
     tax.value = 100.0;
   }
 
-  let amountValue = amount.value;
-  let taxValue = tax.value / 100;
+  let amountValue = amount.val();
+  let taxValue = tax.val() / 100;
   let taxResult = amountValue * taxValue;
   let finalAmount = amountValue - taxResult;
 
-  document.querySelector(".tax-amount").innerHTML = taxResult.toFixed(2);
-  document.querySelector(".final-amount").innerHTML = finalAmount.toFixed(2);
+  $(".tax-amount").html(taxResult.toFixed(2));
+  $(".final-amount").html(finalAmount.toFixed(2));
 }

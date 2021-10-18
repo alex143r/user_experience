@@ -8,7 +8,9 @@ document.querySelector("button").addEventListener("click", function (e) {
 });
 
 function calculateTemperature() {
-  const temperature = parseInt(document.querySelector("#convert-input").value);
+  const temperature = parseFloat(
+    document.querySelector("#convert-input").value
+  );
   const currentUnit = document.querySelector("#currentUnit").value;
   const newUnit = document.querySelector("#newUnit").value;
   const originalValue = document.querySelector(".original-value");
