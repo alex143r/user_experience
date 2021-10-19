@@ -39,7 +39,9 @@ a {
   text-decoration: none;
   color: var(--primary-color);
 }
-
+.main-content {
+  margin: 1rem;
+}
 aside {
   background-color: var(--secondary-color);
   margin: 1rem;
@@ -54,4 +56,44 @@ footer {
   color: white;
   text-align: center;
   padding: 0.5rem 0;
+}
+
+@media only screen and (min-width: 600px) {
+  nav ul {
+    columns: 2;
+    column-gap: 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: var(--nav-color);
+  }
+  nav ul {
+    width: 40%;
+    columns: 4;
+  }
+  li {
+    border: none;
+  }
+  section {
+    display: inline;
+  }
+  .main-content {
+    float: left;
+  }
+  .main-content:first-child {
+    width: 65%;
+  }
+  .main-content:last-child {
+    width: 25%;
+  }
+  aside {
+    max-width: unset;
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
 }
