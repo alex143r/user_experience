@@ -8,8 +8,11 @@
   --primary-color: #8c306c;
   --secondary-color: #d98fbf;
   --nav-color: #bf609e;
+  --footer-height: 30px;
 }
-
+main {
+  min-height: calc(100vh - var(--footer-height));
+}
 h1 {
   color: white;
   background: var(--primary-color);
@@ -51,6 +54,7 @@ aside {
 }
 
 footer {
+  height: var(--footer-height);
   width: 100%;
   background-color: var(--primary-color);
   color: white;
@@ -89,10 +93,6 @@ footer {
   }
   aside {
     max-width: unset;
-  }
-  footer {
-    position: absolute;
-    bottom: 0;
   }
 }
 @media only screen and (min-width: 1200px) {

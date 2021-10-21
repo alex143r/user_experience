@@ -8,8 +8,11 @@
   --primary-color: #8c306c;
   --secondary-color: ##d98fbf;
   --nav-color: #bf609e;
+  --footer-height: 30px;
 }
-
+main {
+  min-height: calc(100vh - var(--footer-height));
+}
 h1 {
   color: white;
   background: var(--primary-color);
@@ -40,4 +43,97 @@ footer {
   color: white;
   text-align: center;
   padding: 0.5rem 0;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #8c306c;
+  --secondary-color: #d98fbf;
+  --nav-color: #bf609e;
+}
+
+h1 {
+  color: white;
+  background: var(--primary-color);
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+}
+nav {
+  width: 100%;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+li {
+  color: var(--primary-color);
+  background-color: var(--nav-color);
+
+  margin-right: 1rem;
+  text-align: center;
+  border: 1px solid black;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.main-content {
+  margin: 1rem;
+}
+aside {
+  background-color: var(--secondary-color);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  color: White;
+}
+
+footer {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+@media only screen and (min-width: 600px) {
+  nav ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: var(--nav-color);
+  }
+  nav ul {
+    grid-template-columns: 1fr 1fr 1fr 1fr 8fr;
+  }
+  li {
+    border: none;
+  }
+  section {
+    display: inline;
+  }
+  .main-content {
+    float: left;
+  }
+  .main-content:first-child {
+    width: 65%;
+  }
+  .main-content:last-child {
+    width: 25%;
+  }
+  aside {
+    max-width: unset;
+  }
+}
+@media only screen and (min-width: 1200px) {
 }
