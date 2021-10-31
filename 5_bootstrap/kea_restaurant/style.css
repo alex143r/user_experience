@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  font-size: 1rem;
+  font-style: normal;
+}
+
+header h1 {
+  padding: 1rem 0;
+  text-align: center;
+  color: white;
+  background-color: #ea5048;
+}
+
+nav {
+  background-color: #26354c;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+nav a {
+  flex-grow: 1;
+  flex-basis: 200px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid white;
+  text-align: center;
+  margin: 0 1rem;
+  font-size: 1.1rem;
+}
+nav a:last-of-type {
+  border-bottom: none;
+}
+nav a.active {
+  font-size: 1.4rem;
+  color: #e5cd8f;
+}
+
+footer {
+  background-color: #26354c;
+  color: white;
+  padding: 0.4rem 0;
+  text-align: center;
+}
+
+main {
+  margin: 0.5rem 1rem;
+}
+main p {
+  text-align: justify;
+}
+
+main#home p#txtWelcome {
+  padding: 0.5rem 0;
+}
+main#home section#welcome {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+main#home section#welcome #txtContainer,
+main#home section#welcome img#restaurant {
+  flex-grow: 1;
+  flex-basis: 200px;
+}
+main#home li {
+  list-style: none;
+  color: #ea5048;
+  font-weight: bold;
+  margin: 0.5rem;
+}
+main#home #txtQuote {
+  background-color: lightgrey;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+main#menu article.dish {
+  background-color: lightgoldenrodyellow;
+  border: black solid thin;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+main#menu article.dish h2 {
+  margin: 0.8rem 0;
+  font-size: 1.3rem;
+}
+main#menu article.dish p.dishDesc {
+  margin: 0.5rem 0;
+}
+main#menu article.dish p.dishPrice {
+  background-color: #ea5048;
+  color: white;
+  border: 0.3rem solid #26354c;
+  padding: 0.2rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+main#contact {
+  display: grid;
+  grid-template-areas: "img" "address" "form";
+}
+main#contact address#addressTxt {
+  grid-area: address;
+}
+main#contact address#addressTxt p {
+  margin: 1rem 0;
+}
+main#contact address#addressTxt a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+main#contact #map {
+  grid-area: img;
+  border: black solid thin;
+  padding: 0.5rem;
+}
+main#contact form {
+  grid-area: form;
+}
+main#contact form fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+main#contact form input,
+main#contact form textarea,
+main#contact form label {
+  width: 100%;
+}
+main#contact form input,
+main#contact form textarea {
+  margin-bottom: 0.5rem;
+}
+main#contact form input#dateTime {
+  width: auto;
+}
+main#contact form input#noPersons {
+  width: 3rem;
+}
+main#contact form textarea {
+  height: 5rem;
+}
+main#contact form button {
+  font-size: 1rem;
+  padding: 0.2rem 0.5rem;
+}
+
+@media only screen and (min-width: 500px) {
+  nav {
+    display: block;
+  }
+  nav a {
+    border-bottom: none;
+    display: inline-block;
+    margin: 0 0.5rem;
+  }
+
+  header h1 {
+    text-align: left;
+    padding-left: 2rem;
+  }
+}
+@media only screen and (min-width: 700px) {
+  main p {
+    text-align: left;
+  }
+
+  main#home section#welcome {
+    flex-direction: row;
+  }
+  main#home section#welcome img#restaurant {
+    margin-bottom: auto;
+  }
+
+  main#menu article.dish {
+    flex-direction: row;
+  }
+  main#menu article.dish .menuTxt,
+main#menu article.dish img {
+    flex-grow: 1;
+    flex-basis: 300px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  main#contact {
+    grid-template-areas: "address img img img" "form form form form";
+    grid-template-columns: repeat(4, 1fr);
+  }
+  main#contact #map {
+    margin-bottom: 0.5rem;
+  }
+  main#contact address#addressTxt p:first-of-type {
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main#contact {
+    grid-template-columns: 35% 65%;
+    grid-template-areas: "address img" "form img";
+  }
+
+  main#contact #map {
+    margin-right: 1rem;
+  }
+
+  main#contact form fieldset {
+    margin-right: 1rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  main#contact {
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 22% 78%;
+  }
+  main#contact form label {
+    width: 25%;
+  }
+  main#contact form label:last-of-type {
+    width: 100%;
+  }
+  main#contact form input {
+    width: 75%;
+  }
+  main#contact form input#noPersons {
+    margin-right: 65%;
+  }
+  main#contact form input#dateTime {
+    margin-right: 38%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

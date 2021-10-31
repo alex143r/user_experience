@@ -49,15 +49,19 @@ function setNav() {
   );
 }
 function setText(newArticleId) {
+  console.log(event.target);
   $("#main > article:visible").hide();
   $(`#${newArticleId}`).show();
   $(".subject > main").hide();
-  $(".subject > header").click(function (e) {
-    if ($(e.target).next().is(":visible")) {
-      $(".subject > main").hide();
-    } else {
-      $(".subject > main").hide();
-      $(e.target).next().show();
-    }
-  });
 }
+
+$(".subject > header").click(function (e) {
+  console.log($(e.target).next().html());
+  console.log($(e.target).next().is(":visible"));
+  if ($(e.target).next().is(":visible")) {
+    $(".subject > main").hide();
+  } else {
+    $(".subject > main").hide();
+    $(e.target).next().show();
+  }
+});

@@ -1,0 +1,325 @@
+//Variables for colors
+$primaryColor: #ea5048;
+$secondaryColor: #26354c;
+$tertiaryColor: lightgoldenrodyellow;
+$white: white;
+$black: black;
+$linkActive: #e5cd8f;
+
+//GENEREAL
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  font-size: 1rem;
+  font-style: normal;
+}
+
+//NAVIGATION
+header {
+  h1 {
+    padding: 1rem 0;
+    text-align: center;
+    color: $white;
+    background-color: $primaryColor;
+  }
+}
+
+nav {
+  background-color: $secondaryColor;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+
+  a {
+    flex-grow: 1;
+    flex-basis: 200px;
+    text-decoration: none;
+    color: $white;
+    font-weight: bold;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid $white;
+    text-align: center;
+    margin: 0 1rem;
+    font-size: 1.1rem;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    &.active {
+      font-size: 1.4rem;
+      color: $linkActive;
+    }
+  }
+}
+
+//FOOTER
+footer {
+  background-color: $secondaryColor;
+  color: $white;
+  padding: 0.4rem 0;
+  text-align: center;
+}
+
+//MAIN
+main {
+  margin: 0.5rem 1rem;
+
+  p {
+    text-align: justify;
+  }
+}
+
+//HOME PAGE
+main#home {
+  p#txtWelcome {
+    padding: 0.5rem 0;
+  }
+
+  section#welcome {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+
+    #txtContainer,
+    img#restaurant {
+      flex-grow: 1;
+      flex-basis: 200px;
+    }
+  }
+
+  li {
+    list-style: none;
+    color: $primaryColor;
+    font-weight: bold;
+    margin: 0.5rem;
+  }
+
+  #txtQuote {
+    background-color: lightgrey;
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+//MENU
+main#menu {
+  article.dish {
+    background-color: $tertiaryColor;
+    border: $black solid thin;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+
+    h2 {
+      margin: 0.8rem 0;
+      font-size: 1.3rem;
+    }
+
+    p.dishDesc {
+      margin: 0.5rem 0;
+    }
+
+    p.dishPrice {
+      background-color: $primaryColor;
+      color: $white;
+      border: 0.3rem solid $secondaryColor;
+      padding: 0.2rem;
+      font-weight: bold;
+      display: inline-block;
+    }
+  }
+}
+
+//CONTACT
+main#contact {
+  display: grid;
+  grid-template-areas:
+    "img"
+    "address"
+    "form";
+
+  address#addressTxt {
+    grid-area: address;
+
+    p {
+      margin: 1rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: $black;
+      font-weight: bold;
+    }
+  }
+
+  #map {
+    grid-area: img;
+    border: $black solid thin;
+    padding: 0.5rem;
+  }
+
+  //CONTACT FORM
+  form {
+    grid-area: form;
+
+    fieldset {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0.5rem;
+    }
+
+    input,
+    textarea,
+    label {
+      width: 100%;
+    }
+
+    input,
+    textarea {
+      margin-bottom: 0.5rem;
+    }
+
+    input#dateTime {
+      width: auto;
+    }
+
+    input#noPersons {
+      width: 3rem;
+    }
+
+    textarea {
+      height: 5rem;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 0.2rem 0.5rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  nav {
+    display: block;
+
+    a {
+      border-bottom: none;
+      display: inline-block;
+      margin: 0 0.5rem;
+    }
+  }
+
+  header {
+    h1 {
+      text-align: left;
+      padding-left: 2rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  main p {
+    text-align: left;
+  }
+
+  main#home section#welcome {
+    flex-direction: row;
+
+    img#restaurant {
+      margin-bottom: auto;
+    }
+  }
+
+  main#menu article.dish {
+    flex-direction: row;
+
+    .menuTxt,
+    img {
+      flex-grow: 1;
+      flex-basis: 300px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  main#contact {
+    grid-template-areas:
+      "address img img img"
+      "form form form form";
+    grid-template-columns: repeat(4, 1fr);
+
+    #map {
+      margin-bottom: 0.5rem;
+    }
+
+    address#addressTxt p {
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  main#contact {
+    grid-template-columns: 35% 65%;
+    grid-template-areas:
+      "address img"
+      "form img";
+  }
+
+  main#contact #map {
+    margin-right: 1rem;
+  }
+
+  main#contact form fieldset {
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  main#contact {
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 22% 78%;
+
+    form {
+      label {
+        width: 25%;
+
+        &:last-of-type {
+          width: 100%;
+        }
+      }
+
+      input {
+        width: 75%;
+
+        &#noPersons {
+          margin-right: 65%;
+        }
+
+        &#dateTime {
+          margin-right: 38%;
+        }
+      }
+    }
+  }
+}
