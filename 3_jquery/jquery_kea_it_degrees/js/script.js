@@ -4,7 +4,6 @@ const bachelorDropdown = $("#PBAMenu");
 const academyDropdown = $("#APMenu");
 
 if (window.matchMedia("(min-width: 768px)").matches) {
-  console.log("rat big");
   bachelorMenu.hover(function () {
     bachelorDropdown.show();
     bachelorDropdown.css({ left: 291 });
@@ -20,6 +19,10 @@ if (window.matchMedia("(min-width: 768px)").matches) {
     bachelorDropdown.hide();
     academyDropdown.hide();
   });
+  $("#aHome").mouseenter(function () {
+    bachelorDropdown.hide();
+    academyDropdown.hide();
+  });
 } else {
   bachelorMenu.click(function () {
     bachelorDropdown.toggle();
@@ -30,6 +33,12 @@ if (window.matchMedia("(min-width: 768px)").matches) {
     bachelorDropdown.hide();
   });
 }
+$("#aHome").click(function () {
+  $("#breadcrumbs").html(`${event.target.innerHTML}`);
+  $("#main > article:visible").hide();
+  $(`#Home`).show();
+  $(".subject > main").hide();
+});
 $("#aCS").click(function () {
   setNav();
   const navName = this.id;
@@ -56,8 +65,6 @@ function setText(newArticleId) {
 }
 
 $(".subject > header").click(function (e) {
-  console.log($(e.target).next().html());
-  console.log($(e.target).next().is(":visible"));
   if ($(e.target).next().is(":visible")) {
     $(".subject > main").hide();
   } else {
