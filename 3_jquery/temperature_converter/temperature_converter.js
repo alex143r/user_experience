@@ -13,7 +13,6 @@ function calculateTemperature() {
   const newUnit = $("#newUnit").val();
   const originalValue = $(".original-value");
   const convertedValue = $(".converted-value");
-  console.log(currentUnit);
   let result;
   let resultText;
 
@@ -22,8 +21,6 @@ function calculateTemperature() {
     originalValue.html(`${temperature.toFixed(2)}°C =`);
     if (newUnit == "celsius") {
       result = temperature;
-      console.log(result);
-
       resultText = `°C`;
     }
     if (newUnit == "fahrenheit") {

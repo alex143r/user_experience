@@ -1,5 +1,3 @@
-// let cdCount = 0;
-
 $("button").click(function (e) {
   const form = $("form")[0];
   e.preventDefault();

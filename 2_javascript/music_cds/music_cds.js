@@ -18,5 +18,5 @@ function addCd() {
 }
 
 function deleteItem() {
-  target.parentElement.remove();
+  event.target.parentElement.remove();
 }
